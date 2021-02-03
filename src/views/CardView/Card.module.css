@@ -1,0 +1,38 @@
+.container {
+  padding: 10px;
+}
+.form {
+}
+.title {
+  padding: 5px;
+}
+.box {
+  display: flex;
+  align-items: start;
+  padding: 5px;
+}
+.imgBox {
+  padding: 5px;
+  width: 100px;
+  height: 100px;
+}
+.optionsBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.clearOptions {
+}
+
+.cartAdd {
+}
+.quantityBox {
+  display: flex;
+}
+.decrease {
+}
+.quantity {
+}
+.increase {
+}

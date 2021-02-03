@@ -1,0 +1,25 @@
+.item {
+  display: flex;
+  width: 300px;
+  align-items: center;
+  padding: 5px;
+  border: 1px solid black;
+}
+.img {
+  height: 30px;
+  width: 30px;
+  margin-right: 10px;
+}
+.name {
+  margin-right: 10px;
+}
+.x {
+}
+
+.quantity {
+  margin-right: 15px;
+  margin-right: auto;
+}
+.price {
+  margin-right: 15px;
+}
