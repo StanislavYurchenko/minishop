@@ -24,7 +24,7 @@ const OrderForm = () => {
       className={styles.form}
       action="https://formsubmit.co/yurchenko.stanislav@ukr.net"
       method="POST"
-      onSubmit={onCleanCart}
+      // onSubmit={onCleanCart}
     >
       <h4 className={styles.title}>Place order</h4>
       <input
