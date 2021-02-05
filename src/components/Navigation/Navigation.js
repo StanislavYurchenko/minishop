@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { getTotalPrice } from '../../redux/slices/cartSlice';
-import CartItem from '../Cart/CartItem';
+import CartItem from '../CartItem/CartItem';
 import styles from './Navigation.module.css';
 
 function Navigation() {
@@ -33,6 +33,11 @@ function Navigation() {
             <ul className={styles.cartList}>
               <CartItem styles={styles} />
             </ul>
+            {totalPrice > 0 && (
+              <NavLink to="/cart" className={styles.link}>
+                Go to Checkout
+              </NavLink>
+            )}
           </div>
         </li>
       </ul>

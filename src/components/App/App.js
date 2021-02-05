@@ -1,17 +1,17 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-// import { Counter } from '../Counter/Counter';
 import UpperBar from '../UpperBar/UpperBar';
 import Navigation from '../Navigation/Navigation';
 import HomeView from '../../views/HomeView/HomeView';
-import CardView from '../../views/CardView/CardView';
+import DetailsView from '../../views/DetailsView/DetailsView';
 import CartView from '../../views/CartView/CartView';
+import Container from '../../components/Container/Container';
 
 import './App.css';
 
 function App() {
   return (
-    <div>
+    <Container>
       <UpperBar>
         <Navigation />
       </UpperBar>
@@ -21,8 +21,8 @@ function App() {
           <HomeView />
         </Route>
 
-        <Route path="/card/:color">
-          <CardView />
+        <Route path="/product/:color">
+          <DetailsView />
         </Route>
 
         <Route path="/cart">
@@ -33,7 +33,7 @@ function App() {
           <div>not found</div>
         </Route>
       </Switch>
-    </div>
+    </Container>
   );
 }
 

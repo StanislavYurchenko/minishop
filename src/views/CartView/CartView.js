@@ -1,6 +1,5 @@
-import Cart from '../../components/Cart/Cart';
+import Cart from 'components/Cart/Cart';
 
-function CartViews() {
-  return <Cart />;
-}
+const CartViews = props => <Cart {...props} />;
+
 export default CartViews;

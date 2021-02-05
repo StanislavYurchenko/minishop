@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { loadMore, selectCards } from '../../redux/slices/cardsSlice';
+import { loadMore, selectCards } from '../../redux/slices/prodactsSlice';
 import { getFiveUniqueCards } from '../../utils/getFiveUniqueCards';
-import Card from '../Card/Card';
+import ProductCard from '../ProductCard/ProductCard';
 
 import styles from './Home.module.css';
 
@@ -20,7 +20,11 @@ function Home() {
       <div className={styles.box}>
         <div className={styles.cards}>
           {cardList.map(card => (
-            <Card color={card.color} price={card.price} key={card.color} />
+            <ProductCard
+              color={card.color}
+              price={card.price}
+              key={card.color}
+            />
           ))}
         </div>
 

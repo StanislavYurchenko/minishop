@@ -1,5 +1,7 @@
 .container {
   padding: 10px;
+  max-width: 400px;
+  margin: 0 auto;
 }
 .form {
 }
@@ -8,7 +10,7 @@
 }
 .box {
   display: flex;
-  align-items: start;
+  justify-content: space-around;
   padding: 5px;
 }
 .imgBox {
@@ -26,13 +28,4 @@
 }
 
 .cartAdd {
-}
-.quantityBox {
-  display: flex;
-}
-.decrease {
-}
-.quantity {
-}
-.increase {
 }

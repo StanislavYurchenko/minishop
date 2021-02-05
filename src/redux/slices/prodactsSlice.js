@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-export const cardsSlice = createSlice({
+export const prodactsSlice = createSlice({
   name: 'cards',
   initialState: {
     list: [],
@@ -12,8 +12,8 @@ export const cardsSlice = createSlice({
   },
 });
 
-export const { loadMore } = cardsSlice.actions;
+export const { loadMore } = prodactsSlice.actions;
 
 export const selectCards = state => state.cards.list;
 
-export default cardsSlice.reducer;
+export default prodactsSlice.reducer;

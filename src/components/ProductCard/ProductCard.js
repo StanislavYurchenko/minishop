@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addItem } from '../../redux/slices/cartSlice';
-import styles from './Card.module.css';
+import styles from './ProductCard.module.css';
 
-function Card({ color, price }) {
+function ProductCard({ color, price }) {
   const normalizedColor = `#${color}`;
   const dispatch = useDispatch();
   const newItem = { color, price };
@@ -14,7 +14,7 @@ function Card({ color, price }) {
 
   return (
     <div className={styles.box}>
-      <Link to={`/card/${color}`}>
+      <Link to={`/product/${color}`}>
         <div
           className={styles.img}
           style={{ backgroundColor: normalizedColor }}
@@ -27,4 +27,4 @@ function Card({ color, price }) {
     </div>
   );
 }
-export default Card;
+export default ProductCard;

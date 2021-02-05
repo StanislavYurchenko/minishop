@@ -1,10 +1,5 @@
-import Home from '../../components/Home/Home';
+import Home from 'components/Home/Home';
 
-function HomeView() {
-  return (
-    <>
-      <Home />
-    </>
-  );
-}
+const HomeView = props => <Home {...props} />;
+
 export default HomeView;

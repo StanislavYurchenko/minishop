@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Redirect } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { selectCards } from '../../redux/slices/cardsSlice';
+import { selectCards } from '../../redux/slices/prodactsSlice';
 import { addItem } from '../../redux/slices/cartSlice';
-import styles from './Card.module.css';
+import ControlQuantity from '../ControlQuantity/ControlQuantity';
+import styles from './Details.module.css';
 import { CARD_OPTIONS } from '../../data/cardOptions';
 
-function CardViews() {
+function Details() {
   const { color } = useParams();
   const cardList = useSelector(selectCards);
   const card = cardList.find(card => card.color === color);
@@ -32,13 +33,13 @@ function CardViews() {
   const onSubmit = event => {
     event.preventDefault();
 
-    dispatch(
-      addItem({
-        item: { ...card },
-        option: selectedOption,
-        quantity,
-      }),
-    );
+    const item = {
+      item: { ...card },
+      option: selectedOption,
+      quantity,
+    };
+
+    dispatch(addItem(item));
   };
 
   const onIncrease = () => {
@@ -97,24 +98,12 @@ function CardViews() {
                 clear
               </button>
             </div>
+            <ControlQuantity
+              onIncrease={onIncrease}
+              onDecrease={onDecrease}
+              quantity={quantity}
+            />
 
-            <div className={styles.quantityBox}>
-              <button
-                className={styles.decrease}
-                onClick={onDecrease}
-                type="button"
-              >
-                -
-              </button>
-              <div className={styles.quantity}> {quantity} </div>
-              <button
-                className={styles.increase}
-                onClick={onIncrease}
-                type="button"
-              >
-                +
-              </button>
-            </div>
             <div>Total price: {totalPrice}$</div>
             <button className={styles.cartAdd} type="submit">
               Add to cart
@@ -125,4 +114,5 @@ function CardViews() {
     </div>
   );
 }
-export default CardViews;
+
+export default Details;
