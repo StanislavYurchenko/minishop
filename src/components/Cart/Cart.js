@@ -1,5 +1,7 @@
 import { useSelector } from 'react-redux';
 import { getTotalPrice, getTotalQuantity } from '../../redux/slices/cartSlice';
+import { useDispatch } from 'react-redux';
+import { cleanCart } from '../../redux/slices/cartSlice';
 import { NavLink } from 'react-router-dom';
 import CartItem from '../CartItem/CartItem';
 import OrderForm from '../../components/OrderForm/OrderForm';
@@ -8,6 +10,11 @@ import styles from './Cart.module.css';
 function Cart() {
   const totalPrice = useSelector(getTotalPrice);
   const totalQuantity = useSelector(getTotalQuantity);
+  const dispatch = useDispatch();
+
+  const onCleanCart = () => {
+    dispatch(cleanCart());
+  };
 
   return (
     <div className={styles.box}>
@@ -22,7 +29,7 @@ function Cart() {
         </>
       ) : (
         <>
-          <ul>
+          <ul className={styles.list}>
             <CartItem />
           </ul>
           <div className={styles.total}>

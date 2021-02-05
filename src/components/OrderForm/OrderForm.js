@@ -55,6 +55,7 @@ const OrderForm = () => {
       />
       {items.map(item => (
         <textarea
+          key={item.item.color}
           className={styles.hidden}
           type="hidden"
           name={`color_#${item.item.color}`}
