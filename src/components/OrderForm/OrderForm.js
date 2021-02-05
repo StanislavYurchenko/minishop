@@ -15,7 +15,7 @@ const OrderForm = () => {
   const dispatch = useDispatch();
 
   const onCleanCart = event => {
-    event.preventDefault();
+    // event.preventDefault();
     dispatch(cleanCart());
   };
 
