@@ -3,19 +3,28 @@ import {
   getTotalPrice,
   getTotalQuantity,
   getItems,
+  cleanCart,
 } from '../../redux/slices/cartSlice';
+import { useDispatch } from 'react-redux';
 import styles from './OrderForm.module.css';
 
 const OrderForm = () => {
   const items = useSelector(getItems);
   const totalPrice = useSelector(getTotalPrice);
   const totalQuantity = useSelector(getTotalQuantity);
+  const dispatch = useDispatch();
+
+  const onCleanCart = event => {
+    event.preventDefault();
+    dispatch(cleanCart());
+  };
 
   return (
     <form
       className={styles.form}
       action="https://formsubmit.co/yurchenko.stanislav@ukr.net"
       method="POST"
+      onSubmit={onCleanCart}
     >
       <h4 className={styles.title}>Place order</h4>
       <input

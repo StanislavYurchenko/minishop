@@ -35,7 +35,9 @@ export const cartSlice = createSlice({
       });
       state.items = [...newState];
     },
-    cleanCart: state => (state.items = []),
+    cleanCart: state => {
+      state.items = [];
+    },
   },
 });
 
